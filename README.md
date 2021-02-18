@@ -1,0 +1,2 @@
+# dyslexia_app
+This project is a mobile application provides some exercises for children who suffer from Dyslexia. In this project, we connected with a Dyslexia Specialist called Dr. Gad Elbeheri and we used some the exercises he recommended it to us. The application frontend built entirely using Flutter Framework and the backend built using Firebase.
