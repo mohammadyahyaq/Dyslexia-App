@@ -1,7 +1,7 @@
 abstract class User {
   String _firstName;
   String _lastName;
-  String _gender;
+  Gender _gender;
 
   String getFirstName() {
     return this._firstName;
@@ -11,9 +11,15 @@ abstract class User {
     return this._lastName;
   }
 
-  String getGender() {
+  Gender getGender() {
     return this._gender;
   }
 
   bool sighOut();
+}
+
+// We will use enumeration for the gender object
+enum Gender {
+  male,
+  female,
 }
