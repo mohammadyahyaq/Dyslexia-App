@@ -10,25 +10,15 @@ class Kid extends User {
   // Other info
   Supervisor _supervisor;
 
-  int getTotalScore() {
-    return this._totalScore;
-  }
+  int get totalScore => _totalScore;
 
-  int getMemoryScore() {
-    return this._memoryScore;
-  }
+  int get memoryScore => _memoryScore;
 
-  int getReadingScore() {
-    return this._readingScore;
-  }
+  int get readingScore => _readingScore;
 
-  int getGrammarSpellScore() {
-    return this._grammarSpellScore;
-  }
+  int get grammarSpellScore => _grammarSpellScore;
 
-  Supervisor getSupervisor() {
-    return this._supervisor;
-  }
+  Supervisor get supervisor => _supervisor;
 
   bool signIn(String parentEmail, String userName, String password) {
     // TODO: implement signIn
@@ -39,4 +29,5 @@ class Kid extends User {
   bool sighOut() {
     // TODO: implement sighOut
     throw UnimplementedError();
-  }}
+  }
+}

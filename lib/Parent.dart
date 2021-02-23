@@ -1,5 +1,5 @@
-import 'package:dyslexia_app/Kid.dart';
-import 'package:dyslexia_app/Sender.dart';
+import 'package:dyslexia_app/kid.dart';
+import 'package:dyslexia_app/sender.dart';
 
 class Parent  extends Sender {
   List<Kid> getKids() {

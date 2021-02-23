@@ -3,9 +3,8 @@ import 'package:dyslexia_app/adult.dart';
 abstract class Sender extends Adult {
   bool _isOnline;
 
-  bool getIsOnline() {
-    return this._isOnline;
-  }
+  bool get isOnline => _isOnline;
+
   List<Message> getMessages() {
     // TODO: implement getMessages to fitch the messages from the database
     throw UnimplementedError();
@@ -23,19 +22,11 @@ class Message {
   String _messageContent;
   DateTime _time;
 
-  Sender getSender() {
-    return this._sender;
-  }
+  Sender get sender => _sender;
 
-  Sender getReceiver() {
-    return this._receiver;
-  }
+  Sender get receiver => _receiver;
 
-  String getMessageContent() {
-    return this._messageContent;
-  }
+  String get messageContent => _messageContent;
 
-  DateTime getTime() {
-    return this._time;
-  }
+  DateTime get time => _time;
 }

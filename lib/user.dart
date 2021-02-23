@@ -3,17 +3,12 @@ abstract class User {
   String _lastName;
   Gender _gender;
 
-  String getFirstName() {
-    return this._firstName;
-  }
 
-  String getLastName() {
-    return this._lastName;
-  }
+  String get firstName => _firstName;
 
-  Gender getGender() {
-    return this._gender;
-  }
+  String get lastName => _lastName;
+
+  Gender get gender => _gender;
 
   bool sighOut();
 }

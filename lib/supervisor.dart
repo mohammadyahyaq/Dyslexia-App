@@ -1,11 +1,9 @@
-import 'package:dyslexia_app/Sender.dart';
+import 'package:dyslexia_app/sender.dart';
 
 class Supervisor extends Sender {
   int _ratingScore;
 
-  int getRatingScore() {
-    return this._ratingScore;
-  }
+  int get ratingScore => _ratingScore;
 
   bool rateSupervisor() {
     // TODO: implement this method
