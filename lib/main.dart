@@ -8,6 +8,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'عسر القراءة',
+      theme: ThemeData(
+        fontFamily: "Tajawal",
+        primaryColor: Color(0xFFFFFFFF),
+        accentColor: Color(0xFFFFBF09),
+        cardColor: Color(0xFFFFF8E8),
+      ),
       home: Scaffold(
         body: SafeArea(
           child: AppHomeUI(),
@@ -25,6 +31,6 @@ class AppHomeUI extends StatefulWidget {
 class _AppHomeUIState extends State<AppHomeUI> {
   @override
   Widget build(BuildContext context) {
-    return Text("Work In Progress");
+    return Text("تجربة النص");
   }
 }
