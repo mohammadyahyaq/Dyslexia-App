@@ -1,4 +1,5 @@
-import 'package:dyslexia_app/adult.dart';
+import 'adult.dart';
+import 'message.dart';
 
 abstract class Sender extends Adult {
   bool _isOnline;
@@ -14,19 +15,4 @@ abstract class Sender extends Adult {
     // TODO: implement sendMessage
     throw UnimplementedError();
   }
-}
-
-class Message {
-  Sender _sender;
-  Sender _receiver;
-  String _messageContent;
-  DateTime _time;
-
-  Sender get sender => _sender;
-
-  Sender get receiver => _receiver;
-
-  String get messageContent => _messageContent;
-
-  DateTime get time => _time;
 }

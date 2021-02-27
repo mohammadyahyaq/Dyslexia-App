@@ -1,19 +1,16 @@
-import 'package:dyslexia_app/Kid.dart';
+import 'Kid.dart';
 
 class Exercise {
   Kid _kid;
   Level _exerciseLevel;
-  String _exerciseName;
-  String _exerciseDescription;
+  ExerciseName _exerciseName;
   ExerciseType _type;
 
   Kid get kid => _kid;
 
   Level get exerciseLevel => _exerciseLevel;
 
-  String get exerciseName => _exerciseName;
-
-  String get exerciseDescription => _exerciseDescription;
+  ExerciseName get exerciseName => _exerciseName;
 
   ExerciseType get type => _type;
 }
@@ -23,6 +20,20 @@ enum Level {
   easy,
   normal,
   hard,
+}
+
+enum ExerciseName {
+  rememberTheCharacter,
+  categorizeTheWord,
+  completeTheSentence,
+  tanween,
+  shaddah,
+  openedClosedTaa,
+  modood,
+  lastLetter,
+  describeThePic,
+  alPrefix,
+  readTheParagraph,
 }
 
 enum ExerciseType {

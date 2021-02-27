@@ -1,4 +1,6 @@
-import 'package:dyslexia_app/sender.dart';
+import 'sender.dart';
+import 'kid.dart';
+import 'supervised_exercise.dart';
 
 class Supervisor extends Sender {
   int _ratingScore;
@@ -13,6 +15,11 @@ class Supervisor extends Sender {
   @override
   bool sighOut() {
     // TODO: implement sighOut
+    throw UnimplementedError();
+  }
+
+  bool evaluateExercise(Kid kid, SupervisedExercise exercise, String note) {
+    // TODO: implement evaluateExercise
     throw UnimplementedError();
   }
 }

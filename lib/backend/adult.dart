@@ -1,5 +1,5 @@
-import 'user.dart';
 import 'package:email_validator/email_validator.dart';
+import 'user.dart';
 
 abstract class Adult extends User {
   String _email;
