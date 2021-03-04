@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         cardTheme: CardTheme(
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(25.0),
           ),
         ),
       ),

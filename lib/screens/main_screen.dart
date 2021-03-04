@@ -53,17 +53,17 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                         imagePath: 'assets/images/icon.png',
                         itemName: 'ذاكرة الحروف',
-                        itemColor: Color(0x7DEC4646),
+                        itemColor: Color(0x33EC4646),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/last letter.png',
                         itemName: 'لعبة الحرف الأخير',
-                        itemColor: Color(0x7DEC4646),
+                        itemColor: Color(0x33EC4646),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/describe the picture.png',
                         itemName: 'أوصف الصورة',
-                        itemColor: Color(0x7DEC4646),
+                        itemColor: Color(0x33EC4646),
                       )
                     ],
                   ),
@@ -73,17 +73,17 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                         imagePath: 'assets/images/cat.png',
                         itemName: 'جماد حيوان نبات',
-                        itemColor: Color(0x7D2872A1),
+                        itemColor: Color(0x332872A1),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/complete stmt.png',
                         itemName: 'أكمل الجمل',
-                        itemColor: Color(0x7D2872A1),
+                        itemColor: Color(0x332872A1),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/reading.png',
                         itemName: 'تدريب القراءة',
-                        itemColor: Color(0x7D2872A1),
+                        itemColor: Color(0x332872A1),
                       )
                     ],
                   ),
@@ -93,15 +93,15 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                           imagePath: 'assets/images/tanween.png',
                           itemName: 'التنوين',
-                          itemColor: Color(0x7DEDEB5F)),
+                          itemColor: Color(0x33EDEB5F)),
                       MenuItem(
                           imagePath: 'assets/images/shaddah.png',
                           itemName: 'الشدة',
-                          itemColor: Color(0x7DEDEB5F)),
+                          itemColor: Color(0x33EDEB5F)),
                       MenuItem(
                           imagePath: 'assets/images/taa.png',
                           itemName: 'التاء المفتوحة\nوالمربوطة',
-                          itemColor: Color(0x7DEDEB5F)),
+                          itemColor: Color(0x33EDEB5F)),
                     ],
                   ),
                   Row(
@@ -110,7 +110,7 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                         imagePath: 'assets/images/al prefix.png',
                         itemName: 'ال الشمسية\nوالقمرية',
-                        itemColor: Color(0x7DEDEB5F),
+                        itemColor: Color(0x33EDEB5F),
                       ),
                     ],
                   )
@@ -203,17 +203,17 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                         imagePath: 'assets/images/icon.png',
                         itemName: 'ذاكرة الحروف',
-                        itemColor: Color(0x7DEC4646),
+                        itemColor: Color(0xC8EC4646),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/last letter.png',
                         itemName: 'لعبة الحرف الأخير',
-                        itemColor: Color(0x7DEC4646),
+                        itemColor: Color(0xC8EC4646),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/describe the picture.png',
                         itemName: 'أوصف الصورة',
-                        itemColor: Color(0x7DEC4646),
+                        itemColor: Color(0xC8EC4646),
                       )
                     ],
                   ),
@@ -223,17 +223,17 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                         imagePath: 'assets/images/cat.png',
                         itemName: 'جماد حيوان نبات',
-                        itemColor: Color(0x7D2872A1),
+                        itemColor: Color(0xC82872A1),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/complete stmt.png',
                         itemName: 'أكمل الجمل',
-                        itemColor: Color(0x7D2872A1),
+                        itemColor: Color(0xC82872A1),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/reading.png',
                         itemName: 'تدريب القراءة',
-                        itemColor: Color(0x7D2872A1),
+                        itemColor: Color(0xC82872A1),
                       )
                     ],
                   ),
@@ -243,15 +243,15 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                           imagePath: 'assets/images/tanween.png',
                           itemName: 'التنوين',
-                          itemColor: Color(0x7DEDEB5F)),
+                          itemColor: Color(0xC8EDEB5F)),
                       MenuItem(
                           imagePath: 'assets/images/shaddah.png',
                           itemName: 'الشدة',
-                          itemColor: Color(0x7DEDEB5F)),
+                          itemColor: Color(0xC8EDEB5F)),
                       MenuItem(
                           imagePath: 'assets/images/taa.png',
                           itemName: 'التاء المفتوحة\nوالمربوطة',
-                          itemColor: Color(0x7DEDEB5F)),
+                          itemColor: Color(0xC8EDEB5F)),
                     ],
                   ),
                   Row(
@@ -260,7 +260,7 @@ class MainScreen extends StatelessWidget {
                       MenuItem(
                         imagePath: 'assets/images/al prefix.png',
                         itemName: 'ال الشمسية\nوالقمرية',
-                        itemColor: Color(0x7DEDEB5F),
+                        itemColor: Color(0xC8EDEB5F),
                       ),
                     ],
                   )
