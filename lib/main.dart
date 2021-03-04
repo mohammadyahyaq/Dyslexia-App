@@ -1,4 +1,5 @@
-import 'package:dyslexia_app/screens/remember_the_letter.dart';
+import 'package:dyslexia_app/screens/last_letter_screen.dart';
+import 'package:dyslexia_app/screens/remember_the_letter_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'screens/main_screen.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => MainScreen(),
-        '/rememberTheLetter': (context) => RememberTheLetter(),
+        '/rememberTheLetter': (context) => RememberTheLetterScreen(),
+        '/lastLetter': (context) => LastLetterScreen(),
       },
     );
   }

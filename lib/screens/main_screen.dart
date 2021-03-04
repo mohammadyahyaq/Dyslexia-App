@@ -1,4 +1,4 @@
-import 'package:dyslexia_app/screens/remember_the_letter.dart';
+import 'package:dyslexia_app/screens/remember_the_letter_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -61,10 +61,15 @@ class MainScreen extends StatelessWidget {
                           itemColor: Color(0x33EC4646),
                         ),
                       ),
-                      MenuItem(
-                        imagePath: 'assets/images/last letter.png',
-                        itemName: 'لعبة الحرف الأخير',
-                        itemColor: Color(0x33EC4646),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, '/lastLetter');
+                        },
+                        child: MenuItem(
+                          imagePath: 'assets/images/last letter.png',
+                          itemName: 'لعبة الحرف الأخير',
+                          itemColor: Color(0x33EC4646),
+                        ),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/describe the picture.png',
