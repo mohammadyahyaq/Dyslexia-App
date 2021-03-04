@@ -1,3 +1,4 @@
+import 'package:dyslexia_app/screens/remember_the_letter.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -50,10 +51,15 @@ class MainScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      MenuItem(
-                        imagePath: 'assets/images/icon.png',
-                        itemName: 'ذاكرة الحروف',
-                        itemColor: Color(0x33EC4646),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/rememberTheLetter');
+                        },
+                        child: MenuItem(
+                          imagePath: 'assets/images/icon.png',
+                          itemName: 'ذاكرة الحروف',
+                          itemColor: Color(0x33EC4646),
+                        ),
                       ),
                       MenuItem(
                         imagePath: 'assets/images/last letter.png',

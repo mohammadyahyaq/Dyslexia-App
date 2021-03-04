@@ -1,3 +1,4 @@
+import 'package:dyslexia_app/screens/remember_the_letter.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'screens/main_screen.dart';
@@ -25,10 +26,7 @@ class MyApp extends StatelessWidget {
           shadowColor: Color(0x00FFFFFF),
           color: Colors.white,
           textTheme: TextTheme(
-            title: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0
-            ),
+            title: TextStyle(color: Colors.black, fontSize: 20.0),
           ),
         ),
         fontFamily: 'Tajawal',
@@ -43,7 +41,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       initialRoute: '/',
-      routes: {'/': (context) => MainScreen()},
+      routes: {
+        '/': (context) => MainScreen(),
+        '/rememberTheLetter': (context) => RememberTheLetter(),
+      },
     );
   }
 }
