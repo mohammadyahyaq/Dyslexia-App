@@ -1,3 +1,6 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,29 +11,39 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'عسر القراءة',
+      // we should use localization to convert the app to Right to Left format
+      localizationsDelegates: [
+        GlobalCupertinoLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('ar', ''), // Arabic, no country specified
+      ],
       theme: ThemeData(
-        fontFamily: "Tajawal",
+        appBarTheme: AppBarTheme(
+          shadowColor: Color(0x00FFFFFF),
+          color: Colors.white,
+          textTheme: TextTheme(
+            title: TextStyle(
+              color: Colors.black,
+              fontSize: 20.0
+            ),
+          ),
+        ),
+        fontFamily: 'Tajawal',
         primaryColor: Color(0xFFFFFFFF),
         accentColor: Color(0xFFFFBF09),
         cardColor: Color(0xFFFFF8E8),
-      ),
-      home: Scaffold(
-        body: SafeArea(
-          child: AppHomeUI(),
+        cardTheme: CardTheme(
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
         ),
       ),
+      initialRoute: '/',
+      routes: {'/': (context) => MainScreen()},
     );
-  }
-}
-
-class AppHomeUI extends StatefulWidget {
-  @override
-  _AppHomeUIState createState() => _AppHomeUIState();
-}
-
-class _AppHomeUIState extends State<AppHomeUI> {
-  @override
-  Widget build(BuildContext context) {
-    return Text("تجربة النص");
   }
 }
