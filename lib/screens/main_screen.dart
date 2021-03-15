@@ -59,33 +59,26 @@ class MainScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/rememberTheLetter');
-                        },
-                        child: MenuItem(
-                          imagePath: 'assets/images/icon.png',
-                          itemName: 'ذاكرة الحروف',
-                          itemColor: Color(0x33EC4646),
-                          isUnLocked: levels[0][0],
-                        ),
+                      MenuItem(
+                        imagePath: 'assets/images/icon.png',
+                        itemName: 'ذاكرة الحروف',
+                        itemColor: Color(0x33EC4646),
+                        isUnLocked: levels[0][0],
+                        pageName: '/rememberTheLetter',
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/lastLetter');
-                        },
-                        child: MenuItem(
-                          imagePath: 'assets/images/last letter.png',
-                          itemName: 'لعبة الحرف الأخير',
-                          itemColor: Color(0x33EC4646),
-                          isUnLocked: levels[0][1],
-                        ),
+                      MenuItem(
+                        imagePath: 'assets/images/last letter.png',
+                        itemName: 'لعبة الحرف الأخير',
+                        itemColor: Color(0x33EC4646),
+                        isUnLocked: levels[0][1],
+                        pageName: '/lastLetter',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/describe the picture.png',
                         itemName: 'أوصف الصورة',
                         itemColor: Color(0x33EC4646),
                         isUnLocked: levels[0][2],
+                        pageName: '/',
                       )
                     ],
                   ),
@@ -97,18 +90,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'جماد حيوان نبات',
                         itemColor: Color(0x332872A1),
                         isUnLocked: levels[0][3],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/complete stmt.png',
                         itemName: 'أكمل الجمل',
                         itemColor: Color(0x332872A1),
                         isUnLocked: levels[0][4],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/reading.png',
                         itemName: 'تدريب القراءة',
                         itemColor: Color(0x332872A1),
                         isUnLocked: levels[0][5],
+                        pageName: '/',
                       )
                     ],
                   ),
@@ -120,18 +116,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'التنوين',
                         itemColor: Color(0x33EDEB5F),
                         isUnLocked: levels[0][6],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/shaddah.png',
                         itemName: 'الشدة',
                         itemColor: Color(0x33EDEB5F),
                         isUnLocked: levels[0][7],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/taa.png',
                         itemName: 'التاء المفتوحة\nوالمربوطة',
                         itemColor: Color(0x33EDEB5F),
                         isUnLocked: levels[0][8],
+                        pageName: '/',
                       ),
                     ],
                   ),
@@ -143,6 +142,7 @@ class MainScreen extends StatelessWidget {
                         itemName: 'ال الشمسية\nوالقمرية',
                         itemColor: Color(0x33EDEB5F),
                         isUnLocked: levels[0][9],
+                        pageName: '/',
                       ),
                     ],
                   )
@@ -162,18 +162,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'ذاكرة الحروف',
                         itemColor: Color(0x7DEC4646),
                         isUnLocked: levels[1][0],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/last letter.png',
                         itemName: 'لعبة الحرف الأخير',
                         itemColor: Color(0x7DEC4646),
                         isUnLocked: levels[1][1],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/describe the picture.png',
                         itemName: 'أوصف الصورة',
                         itemColor: Color(0x7DEC4646),
                         isUnLocked: levels[1][2],
+                        pageName: '/',
                       )
                     ],
                   ),
@@ -185,18 +188,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'جماد حيوان نبات',
                         itemColor: Color(0x7D2872A1),
                         isUnLocked: levels[1][3],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/complete stmt.png',
                         itemName: 'أكمل الجمل',
                         itemColor: Color(0x7D2872A1),
                         isUnLocked: levels[1][4],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/reading.png',
                         itemName: 'تدريب القراءة',
                         itemColor: Color(0x7D2872A1),
                         isUnLocked: levels[1][5],
+                        pageName: '/',
                       )
                     ],
                   ),
@@ -208,18 +214,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'التنوين',
                         itemColor: Color(0x7DEDEB5F),
                         isUnLocked: levels[1][6],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/shaddah.png',
                         itemName: 'الشدة',
                         itemColor: Color(0x7DEDEB5F),
                         isUnLocked: levels[1][7],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/taa.png',
                         itemName: 'التاء المفتوحة\nوالمربوطة',
                         itemColor: Color(0x7DEDEB5F),
                         isUnLocked: levels[1][8],
+                        pageName: '/',
                       ),
                     ],
                   ),
@@ -231,6 +240,7 @@ class MainScreen extends StatelessWidget {
                         itemName: 'ال الشمسية\nوالقمرية',
                         itemColor: Color(0x7DEDEB5F),
                         isUnLocked: levels[1][9],
+                        pageName: '/',
                       ),
                     ],
                   )
@@ -250,18 +260,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'ذاكرة الحروف',
                         itemColor: Color(0xC8EC4646),
                         isUnLocked: levels[2][0],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/last letter.png',
                         itemName: 'لعبة الحرف الأخير',
                         itemColor: Color(0xC8EC4646),
                         isUnLocked: levels[2][1],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/describe the picture.png',
                         itemName: 'أوصف الصورة',
                         itemColor: Color(0xC8EC4646),
                         isUnLocked: levels[2][2],
+                        pageName: '/',
                       )
                     ],
                   ),
@@ -273,18 +286,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'جماد حيوان نبات',
                         itemColor: Color(0xC82872A1),
                         isUnLocked: levels[2][3],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/complete stmt.png',
                         itemName: 'أكمل الجمل',
                         itemColor: Color(0xC82872A1),
                         isUnLocked: levels[2][4],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/reading.png',
                         itemName: 'تدريب القراءة',
                         itemColor: Color(0xC82872A1),
                         isUnLocked: levels[2][5],
+                        pageName: '/',
                       )
                     ],
                   ),
@@ -296,18 +312,21 @@ class MainScreen extends StatelessWidget {
                         itemName: 'التنوين',
                         itemColor: Color(0xC8EDEB5F),
                         isUnLocked: levels[2][6],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/shaddah.png',
                         itemName: 'الشدة',
                         itemColor: Color(0xC8EDEB5F),
                         isUnLocked: levels[2][7],
+                        pageName: '/',
                       ),
                       MenuItem(
                         imagePath: 'assets/images/taa.png',
                         itemName: 'التاء المفتوحة\nوالمربوطة',
                         itemColor: Color(0xC8EDEB5F),
                         isUnLocked: levels[2][8],
+                        pageName: '/',
                       ),
                     ],
                   ),
@@ -319,6 +338,7 @@ class MainScreen extends StatelessWidget {
                         itemName: 'ال الشمسية\nوالقمرية',
                         itemColor: Color(0xC8EDEB5F),
                         isUnLocked: levels[2][9],
+                        pageName: '/',
                       ),
                     ],
                   )
@@ -357,36 +377,56 @@ class MenuItem extends StatelessWidget {
   final String itemName;
   final Color itemColor;
   final int isUnLocked;
+  final String pageName;
 
   MenuItem(
       {@required this.imagePath,
       @required this.itemName,
       @required this.itemColor,
-      @required this.isUnLocked});
+      @required this.isUnLocked,
+      @required this.pageName});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 15.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            backgroundImage: (isUnLocked == 1)
-                ? AssetImage(imagePath)
-                : AssetImage('assets/images/locked.png'),
-            backgroundColor: (isUnLocked == 1) ? itemColor : Colors.grey[300],
-            radius: 35.0,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 0.0),
-            child: Text(
-              itemName,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 15.0),
+    return GestureDetector(
+      onTap: (isUnLocked == 1)
+          ? () {
+              Navigator.pushNamed(context, pageName);
+            }
+          : () {
+              //do nothing
+            },
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: (isUnLocked == 1) ? itemColor : Colors.grey[300],
+              ),
+              width: 70.0,
+              height: 70.0,
+              child: Padding(
+                padding: (isUnLocked == 1) ? EdgeInsets.all(5.0) : EdgeInsets.all(20.0),
+                child: Image(
+                  image: (isUnLocked == 1)
+                      ? AssetImage(imagePath)
+                      : AssetImage('assets/images/locked.png'),
+                ),
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 0.0),
+              child: Text(
+                itemName,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 15.0),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
