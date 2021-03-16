@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: '/',
+      initialRoute: MainScreen.id,
       routes: {
-        '/': (context) => MainScreen(),
+        MainScreen.id: (context) => MainScreen(),
         '/rememberTheLetter': (context) => RememberTheLetterScreen(),
         '/lastLetter': (context) => LastLetterScreen(),
       },
