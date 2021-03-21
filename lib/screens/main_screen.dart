@@ -1,3 +1,4 @@
+import 'package:dyslexia_app/screens/mcq_screen.dart';
 import 'package:dyslexia_app/screens_components/main_screen_components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +102,7 @@ class MainScreen extends StatelessWidget {
                         itemName: 'أكمل الجمل',
                         itemColor: Color(0x332872A1),
                         isUnLocked: _levels[0][4],
-                        pageName: MainScreen.id,
+                        pageName: MCQScreen.completeStmId,
                       ),
                       MenuItem(
                         imagePath: 'assets/images/reading.png',
@@ -199,7 +200,7 @@ class MainScreen extends StatelessWidget {
                         itemName: 'أكمل الجمل',
                         itemColor: Color(0x7D2872A1),
                         isUnLocked: _levels[1][4],
-                        pageName: MainScreen.id,
+                        pageName: MCQScreen.completeStmId,
                       ),
                       MenuItem(
                         imagePath: 'assets/images/reading.png',

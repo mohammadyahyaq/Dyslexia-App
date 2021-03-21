@@ -1,9 +1,13 @@
+import 'package:dyslexia_app/backend/exercise.dart';
 import 'package:dyslexia_app/screens/last_letter_screen.dart';
+import 'package:dyslexia_app/screens/mcq_screen.dart';
 import 'package:dyslexia_app/screens/remember_the_letter_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'screens/main_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens_brain/mcq_brain.dart';
+import 'backend/exercise.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -46,6 +50,7 @@ class MyApp extends StatelessWidget {
         MainScreen.id: (context) => MainScreen(),
         '/rememberTheLetter': (context) => RememberTheLetterScreen(),
         '/lastLetter': (context) => LastLetterScreen(),
+        MCQScreen.completeStmId: (context) => MCQScreen(brain: MCQBrain(ExerciseName.completeTheSentence)),
       },
     );
   }

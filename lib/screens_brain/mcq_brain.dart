@@ -7,33 +7,34 @@ class MCQBrain {
 
   MCQBrain(ExerciseName exercise) {
     // TODO: this constructor should be remade, where you fitch the data from the database
+    _questions = List<Question>();
     if (exercise == ExerciseName.completeTheSentence) {
       String question = 'أنا أنام ...';
       List<String> choices = ['معروفًا', 'مبكرًا', 'بتركيز', 'مبتسمًا'];
       int answers = 1;
-      _questions.add(Question(question: question, choices: choices, answers: answers));
+      _questions.add(Question(question: question, choices: choices, answer: answers));
 
       String question1 = '... تساعدون المحتاجين';
       List<String> choices1 = ['نحن', 'هم', 'أنتم', 'أنا'];
       int answers1 = 2;
-      _questions.add(Question(question: question1, choices: choices1, answers: answers1));
+      _questions.add(Question(question: question1, choices: choices1, answer: answers1));
 
       String question2 = 'أنتما تسيران ساعة يوميا ... المساء';
       List<String> choices2 = ['عن', 'مع', 'عند', 'على'];
       int answers2 = 2;
-      _questions.add(Question(question: question2, choices: choices2, answers: answers2));
+      _questions.add(Question(question: question2, choices: choices2, answer: answers2));
 
       String question3 = 'الطبيبان ... العملية';
       List<String> choices3 = ['أجريا', 'كتبا', 'يعدان', 'وضعا'];
       int answers3 = 0;
-      _questions.add(Question(question: question3, choices: choices3, answers: answers3));
+      _questions.add(Question(question: question3, choices: choices3, answer: answers3));
     }
 
     _currentIndex = 0;
   }
 
   Question getNext() {
-    if (_currentIndex != 5) {
+    if (_currentIndex < _questions.length) {
       return _questions[_currentIndex++];
     } else {
       return null;
