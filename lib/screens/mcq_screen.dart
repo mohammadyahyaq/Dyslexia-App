@@ -16,13 +16,12 @@ class MCQScreen extends StatefulWidget {
 }
 
 class _MCQScreenState extends State<MCQScreen> {
+
   MCQBrain brain;
-  Question currentQuestion;
 
   @override
   void initState() {
     brain = widget.brain;
-    currentQuestion = brain.getNext();
     super.initState();
   }
 
@@ -31,9 +30,19 @@ class _MCQScreenState extends State<MCQScreen> {
     return Scaffold(
       backgroundColor: Color(0xFFFFBF09),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: currentQuestion.generateWidgets(),
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: brain.generateWidgets(),
+            ),
+          ),
+          Row(
+            children: brain.generateProgressBar(),
+          ),
+        ],
       ),
     );
   }
