@@ -1,4 +1,5 @@
 import 'package:dyslexia_app/backend/exercise.dart';
+import 'package:dyslexia_app/screens/categorize_words.dart';
 import 'package:dyslexia_app/screens/last_letter_screen.dart';
 import 'package:dyslexia_app/screens/mcq_screen.dart';
 import 'package:dyslexia_app/screens/remember_the_letter_screen.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         '/rememberTheLetter': (context) => RememberTheLetterScreen(),
         '/lastLetter': (context) => LastLetterScreen(),
         MCQScreen.completeStmId: (context) => MCQScreen(brain: MCQBrain(ExerciseName.completeTheSentence)),
+        CategorizeTheWord.id: (context) => CategorizeTheWord(),
       },
     );
   }

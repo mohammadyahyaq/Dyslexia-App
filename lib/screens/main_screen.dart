@@ -1,3 +1,4 @@
+import 'package:dyslexia_app/screens/categorize_words.dart';
 import 'package:dyslexia_app/screens/mcq_screen.dart';
 import 'package:dyslexia_app/screens_components/main_screen_components.dart';
 import 'package:flutter/cupertino.dart';
@@ -95,7 +96,7 @@ class MainScreen extends StatelessWidget {
                         itemName: 'جماد حيوان نبات',
                         itemColor: Color(0x332872A1),
                         isUnLocked: _levels[0][3],
-                        pageName: MainScreen.id,
+                        pageName: CategorizeTheWord.id,
                       ),
                       MenuItem(
                         imagePath: 'assets/images/complete stmt.png',
