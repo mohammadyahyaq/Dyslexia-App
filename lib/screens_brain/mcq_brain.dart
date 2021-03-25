@@ -9,6 +9,13 @@ class MCQBrain {
   List<int> _progress;
   int _currentIndex;
 
+
+  Function setState;
+  List<Widget> questionWidgets;
+  List<Widget> progressBarWidgets;
+
+  Animation animation;
+
   MCQBrain(ExerciseName exercise) {
     // TODO: this constructor should be remade, where you fitch the data from the database
     _questions = [];
@@ -35,7 +42,8 @@ class MCQBrain {
       List<String> choices3 = ['أجريا', 'كتبا', 'يعدان', 'وضعا'];
       int answers3 = 0;
       _questions.add(
-          Question(question: question3, choices: choices3, answer: answers3));
+          Question(question: question3, choices: choices3, answer: answers3),
+      );
     }
 
     _progress = [];
@@ -46,28 +54,16 @@ class MCQBrain {
     _currentIndex = 0;
   }
 
+  void setSetStateFunction(Function setState) {
+    this.setState = setState;
+  }
+
   Question _getNext() {
     if (_currentIndex < _questions.length) {
       return _questions[_currentIndex++];
     } else {
       return null;
     }
-  }
-
-  Question getCurrentQuestion() {
-    return _questions[_currentIndex];
-  }
-
-  int getProgress(int index) {
-    return _progress[index];
-  }
-
-  void setProgress(int value, int index) {
-    _progress[index] = value;
-  }
-
-  int getProgressLength () {
-    return _progress.length;
   }
 
   List<Widget> generateProgressBar() {
@@ -90,5 +86,47 @@ class MCQBrain {
     return progressList;
   }
 
+  List<Widget> generateQuestionWidgets() {
+    List<Widget> questionWidgets = [
+      Padding(
+        padding: EdgeInsets.only(bottom: 20.0),
+        child: Text(
+          _questions[_currentIndex].question,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 40.0,
+            color: Colors.black,
+          ),
+        ),
+      ),
+    ];
 
+    for (int i = 0; i < _questions[_currentIndex].choices.length; i++) {
+      questionWidgets.add(
+        GestureDetector(
+          onTap: () {
+            if (_questions[_currentIndex].isCorrect(i)) {
+              _progress[_currentIndex] = 1; // set to correct
+              setState(() {
+                progressBarWidgets = generateProgressBar();
+              });
+            } else {
+              _progress[_currentIndex] = 2; // set inCorrect
+              setState(() {
+                progressBarWidgets = generateProgressBar();
+              });
+            }
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+            child: Choice(
+              choiceText: _questions[_currentIndex].choices[i],
+            ),
+          ),
+        ),
+      );
+    }
+    return questionWidgets;
+  }
 }
