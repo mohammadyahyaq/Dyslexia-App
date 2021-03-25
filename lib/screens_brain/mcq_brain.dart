@@ -46,48 +46,6 @@ class MCQBrain {
     _currentIndex = 0;
   }
 
-  List<Widget> generateWidgets() {
-    List<Widget> questionWidgets = [
-      Padding(
-        padding: EdgeInsets.only(bottom: 20.0),
-        child: Text(
-          _questions[_currentIndex].question,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 40.0,
-            color: Colors.black,
-          ),
-        ),
-      ),
-    ];
-
-    for (int i = 0; i < _questions[_currentIndex].choices.length; i++) {
-      questionWidgets.add(
-        GestureDetector(
-          onTap: () {
-            if (_questions[_currentIndex].isCorrect(i)) {
-              setState() {
-                _progress[i] = 1; // set to correct
-              }
-            } else {
-              setState() {
-                _progress[i] = 0; // set inCorrect
-              }
-            }
-          },
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
-            child: Choice(
-              choiceText: _questions[_currentIndex].choices[i],
-            ),
-          ),
-        ),
-      );
-    }
-    return questionWidgets;
-  }
-
   Question _getNext() {
     if (_currentIndex < _questions.length) {
       return _questions[_currentIndex++];
@@ -96,8 +54,24 @@ class MCQBrain {
     }
   }
 
+  Question getCurrentQuestion() {
+    return _questions[_currentIndex];
+  }
+
+  int getProgress(int index) {
+    return _progress[index];
+  }
+
+  void setProgress(int value, int index) {
+    _progress[index] = value;
+  }
+
+  int getProgressLength () {
+    return _progress.length;
+  }
+
   List<Widget> generateProgressBar() {
-    List<Widget> progressList = List<Widget>();
+    List<Widget> progressList = [];
     for (int i = 0; i < _progress.length; i++) {
       progressList.add(Expanded(
         child: Container(
@@ -115,4 +89,6 @@ class MCQBrain {
     }
     return progressList;
   }
+
+
 }
