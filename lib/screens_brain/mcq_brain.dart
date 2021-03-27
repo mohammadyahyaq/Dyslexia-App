@@ -1,5 +1,6 @@
 import 'package:dyslexia_app/backend/Question.dart';
 import 'package:dyslexia_app/backend/exercise.dart';
+import 'package:dyslexia_app/screens/result_screen.dart';
 import 'package:dyslexia_app/screens_components/mcq_screen_components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,12 +10,15 @@ class MCQBrain {
   List<int> _progress;
   int _currentIndex;
 
+  BuildContext _context;
+  int result = 0;
 
   Function setState;
   List<Widget> questionWidgets;
   List<Widget> progressBarWidgets;
 
-  Animation animation;
+  AnimationController answerController;
+  List<Color> choicesColor;
 
   MCQBrain(ExerciseName exercise) {
     // TODO: this constructor should be remade, where you fitch the data from the database
@@ -42,7 +46,7 @@ class MCQBrain {
       List<String> choices3 = ['أجريا', 'كتبا', 'يعدان', 'وضعا'];
       int answers3 = 0;
       _questions.add(
-          Question(question: question3, choices: choices3, answer: answers3),
+        Question(question: question3, choices: choices3, answer: answers3),
       );
     }
 
@@ -50,20 +54,36 @@ class MCQBrain {
     for (int i = 0; i < _questions.length; i++) {
       _progress.add(0);
     }
-
     _currentIndex = 0;
   }
 
-  void setSetStateFunction(Function setState) {
+  void setEssential(Function setState, AnimationController answerController) {
     this.setState = setState;
+    this.answerController = answerController;
+
+    choicesColor = []; // we have to initialize the list
+    questionWidgets = generateQuestionWidgets();
+    progressBarWidgets = generateProgressBar();
   }
 
-  Question _getNext() {
-    if (_currentIndex < _questions.length) {
-      return _questions[_currentIndex++];
+
+  set context(BuildContext value) {
+    _context = value;
+  }
+
+  void _goNext() {
+    if (_currentIndex < _questions.length - 1) {
+      _currentIndex++;
     } else {
-      return null;
+      if(result == _progress.length){
+        Navigator.pushNamed(_context, ResultScreen.winId);
+      } else {
+        Navigator.pushNamed(_context, ResultScreen.loseId);
+      }
     }
+    setState((){
+      questionWidgets = generateQuestionWidgets();
+    });
   }
 
   List<Widget> generateProgressBar() {
@@ -71,7 +91,11 @@ class MCQBrain {
     for (int i = 0; i < _progress.length; i++) {
       progressList.add(Expanded(
         child: Container(
-          color: (_progress[i] == 0) ? Color(0xFFFFF8E8) : (_progress[i] == 1) ? Color(0xFF5EB693) : Color(0xFFFF5F3D),
+          color: (_progress[i] == 0)
+              ? Color(0xFFFFF8E8)
+              : (_progress[i] == 1)
+                  ? Color(0xFF5EB693)
+                  : Color(0xFFFF5F3D),
           height: 20.0,
         ),
       ));
@@ -102,11 +126,34 @@ class MCQBrain {
       ),
     ];
 
+    choicesColor = [];
     for (int i = 0; i < _questions[_currentIndex].choices.length; i++) {
+      choicesColor.add(Colors.white);
       questionWidgets.add(
         GestureDetector(
           onTap: () {
+            // // step 1: start the animation
+            // Color resultColor;
+            // if(_questions[_currentIndex].isCorrect(i)) {
+            //   resultColor = Color(0xFF5EB693);
+            // } else {
+            //   resultColor = Color(0xFFFF5F3D);
+            // }
+            // setState((){
+            //   choicesColor[i] = resultColor;
+            // });
+            // answerController.addStatusListener((status) {
+            //   if(status == AnimationStatus.completed) {
+            //     setState((){
+            //       choicesColor[i] = Colors.white;
+            //     });
+            //   }
+            // });
+            // answerController.forward();
+
+            // step 2: update the progress bar
             if (_questions[_currentIndex].isCorrect(i)) {
+              result++;
               _progress[_currentIndex] = 1; // set to correct
               setState(() {
                 progressBarWidgets = generateProgressBar();
@@ -117,11 +164,15 @@ class MCQBrain {
                 progressBarWidgets = generateProgressBar();
               });
             }
+
+            // step 3: go to the next question
+            _goNext();
           },
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
             child: Choice(
               choiceText: _questions[_currentIndex].choices[i],
+              choiceColor: choicesColor[i],
             ),
           ),
         ),
@@ -129,4 +180,43 @@ class MCQBrain {
     }
     return questionWidgets;
   }
+
+  // // this method is responsible for flushing animation
+  // void flushAnimation(int index) {
+  //   Color resultColor;
+  //   if(_questions[_currentIndex].isCorrect(index)) {
+  //     resultColor = Color(0xFF5EB693);
+  //   } else {
+  //     resultColor = Color(0xFFFF5F3D);
+  //   }
+  //   if (answerController.value < 0.25) {
+  //     setState((){
+  //       choicesColor[index] = resultColor;
+  //     });
+  //   } else if(answerController.value >= 0.25 && answerController.value < 0.3) {
+  //     setState(() {
+  //       choicesColor[index] = Colors.white;
+  //     });
+  //   } else if(answerController.value >= 0.3 && answerController.value < 0.45) {
+  //     setState((){
+  //       choicesColor[index] = resultColor;
+  //     });
+  //   } else if(answerController.value >= 0.45 && answerController.value < 0.5) {
+  //     setState(() {
+  //       choicesColor[index] = Colors.white;
+  //     });
+  //   } else if(answerController.value >= 0.5 && answerController.value < 0.75){
+  //     setState((){
+  //       choicesColor[index] = resultColor;
+  //     });
+  //   } else if(answerController.value >= 0.75 && answerController.value < 0.8){
+  //     setState(() {
+  //       choicesColor[index] = Colors.white;
+  //     });
+  //   } else {
+  //     setState((){
+  //       choicesColor[index] = resultColor;
+  //     });
+  //   }
+  // }
 }

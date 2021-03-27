@@ -3,6 +3,7 @@ import 'package:dyslexia_app/screens/categorize_words.dart';
 import 'package:dyslexia_app/screens/last_letter_screen.dart';
 import 'package:dyslexia_app/screens/mcq_screen.dart';
 import 'package:dyslexia_app/screens/remember_the_letter_screen.dart';
+import 'package:dyslexia_app/screens/result_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'screens/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,8 @@ class MyApp extends StatelessWidget {
         '/lastLetter': (context) => LastLetterScreen(),
         MCQScreen.completeStmId: (context) => MCQScreen(brain: MCQBrain(ExerciseName.completeTheSentence)),
         CategorizeTheWord.id: (context) => CategorizeTheWord(),
+        ResultScreen.winId: (context) => ResultScreen(result: Result.win),
+        ResultScreen.loseId: (context) => ResultScreen(result: Result.lose),
       },
     );
   }

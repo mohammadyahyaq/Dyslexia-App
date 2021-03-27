@@ -1,10 +1,7 @@
-import 'package:dyslexia_app/backend/Question.dart';
 import 'package:dyslexia_app/screens_brain/mcq_brain.dart';
-import 'package:dyslexia_app/screens_components/mcq_screen_components.dart';
 import 'package:flutter/material.dart';
 
 class MCQScreen extends StatefulWidget {
-
   static final String completeStmId = '/mcq_screen/complete_stmt';
   static final String tanweenId = '/mcq_screen/tanween';
 
@@ -16,25 +13,25 @@ class MCQScreen extends StatefulWidget {
   _MCQScreenState createState() => _MCQScreenState();
 }
 
-class _MCQScreenState extends State<MCQScreen> {
-
+class _MCQScreenState extends State<MCQScreen> with SingleTickerProviderStateMixin {
   MCQBrain brain;
+
+  AnimationController answerController;
 
   @override
   void initState() {
     brain = widget.brain;
-    brain.setSetStateFunction(setState);
+    answerController = AnimationController(
+      duration: Duration(seconds: 1),
+      vsync: this,
+    );
+    brain.setEssential(setState, answerController);
     super.initState();
-  }
-
-  void update() {
-    setState(() {
-
-    });
   }
 
   @override
   Widget build(BuildContext context) {
+    brain.context = context; // we have to pass the context object here to the UI brain, since it is required to move to the result screen
     return Scaffold(
       backgroundColor: Color(0xFFFFBF09),
       body: Column(
