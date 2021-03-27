@@ -84,9 +84,10 @@ class _LastLetterScreenState extends State<LastLetterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[250],
+      backgroundColor: Color(0xFFFFBF09),
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Color(0xFFFFBF09),
         title: Text('تمرين الإستماع'),
         automaticallyImplyLeading: false,
         //backgroundColor: Colors.grey[700],
@@ -99,7 +100,7 @@ class _LastLetterScreenState extends State<LastLetterScreen> {
               wordsBank.getWordType(),
               textAlign: TextAlign.right,
               style: TextStyle(
-                color: Colors.green,
+                color: Colors.green[800],
                 fontWeight: FontWeight.bold,
                 fontSize: 40.0,
               ),
