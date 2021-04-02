@@ -1,4 +1,5 @@
 import 'package:dyslexia_app/backend/exercise.dart';
+import 'package:dyslexia_app/backend/stream_provider.dart';
 import 'package:dyslexia_app/screens/categorize_words.dart';
 import 'package:dyslexia_app/screens/last_letter_screen.dart';
 import 'package:dyslexia_app/screens/mcq_screen.dart';
@@ -49,9 +50,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: MainScreen.id,
+      initialRoute: AppStreamProvider.id,
       routes: {
-        '/': (context) => MyApp(), // just to make the app work
+        AppStreamProvider.id: (context) => AppStreamProvider(), // just to make the app work
         MainScreen.id: (context) => MainScreen(),
         RememberTheLetterScreen.id: (context) => RememberTheLetterScreen(),
         LastLetterScreen.id: (context) => LastLetterScreen(),
