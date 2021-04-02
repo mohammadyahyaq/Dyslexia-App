@@ -8,6 +8,9 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
  */
 class LastLetterScreen extends StatefulWidget {
+
+  static String id = '/kid/lastLetter';
+
   @override
   _LastLetterScreenState createState() => _LastLetterScreenState();
 }

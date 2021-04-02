@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
 
-  static String winId = '/exercises/winScreen';
-  static String loseId = '/exercises/loseScreen';
+  static String winId = '/kid/exercises/winScreen';
+  static String loseId = '/kid/exercises/loseScreen';
 
   ResultScreen({this.result});
 

@@ -5,8 +5,10 @@ import 'package:dyslexia_app/screens/mcq_screen.dart';
 import 'package:dyslexia_app/screens/remember_the_letter_screen.dart';
 import 'package:dyslexia_app/screens/result_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'screens/last_letter_screen.dart';
 import 'screens/main_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens/remember_the_letter_screen.dart';
 import 'screens_brain/mcq_brain.dart';
 import 'backend/exercise.dart';
 
@@ -49,9 +51,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: MainScreen.id,
       routes: {
+        '/': (context) => MyApp(), // just to make the app work
         MainScreen.id: (context) => MainScreen(),
-        '/rememberTheLetter': (context) => RememberTheLetterScreen(),
-        '/lastLetter': (context) => LastLetterScreen(),
+        RememberTheLetterScreen.id: (context) => RememberTheLetterScreen(),
+        LastLetterScreen.id: (context) => LastLetterScreen(),
         MCQScreen.completeStmId: (context) => MCQScreen(brain: MCQBrain(ExerciseName.completeTheSentence)),
         CategorizeTheWord.id: (context) => CategorizeTheWord(),
         ResultScreen.winId: (context) => ResultScreen(result: Result.win),

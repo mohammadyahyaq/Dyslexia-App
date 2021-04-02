@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
 
-  static final String id = '/';
+  static final String id = '/kid';
 
   // this variable represents the unlocked levels for the kid
   // note: 1 represents unlocked, and 0 represents locked

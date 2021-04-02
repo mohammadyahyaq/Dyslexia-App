@@ -2,8 +2,8 @@ import 'package:dyslexia_app/screens_brain/mcq_brain.dart';
 import 'package:flutter/material.dart';
 
 class MCQScreen extends StatefulWidget {
-  static final String completeStmId = '/mcq_screen/complete_stmt';
-  static final String tanweenId = '/mcq_screen/tanween';
+  static final String completeStmId = '/kid/mcq_screen/complete_stmt';
+  static final String tanweenId = '/kid/mcq_screen/tanween';
 
   MCQBrain brain;
 

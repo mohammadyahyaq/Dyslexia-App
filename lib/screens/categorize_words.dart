@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategorizeTheWord extends StatefulWidget {
-  static final id = '/CategorizeTheWord';
+  static final id = '/kid/CategorizeTheWord';
 
   @override
   _CategorizeTheWordState createState() => _CategorizeTheWordState();

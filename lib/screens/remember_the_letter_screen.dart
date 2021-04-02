@@ -4,14 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
 
 class RememberTheLetterScreen extends StatefulWidget {
+
+  static String id = '/kid/rememberTheLetter';
+
   @override
   _RememberTheLetterScreenState createState() =>
       _RememberTheLetterScreenState();
 }
 
 class _RememberTheLetterScreenState extends State<RememberTheLetterScreen> {
-  List<GlobalKey<FlipCardState>> listk = List<GlobalKey<FlipCardState>>(15);
-  List<Color> answerColor = List<Color>(15);
+  List<GlobalKey<FlipCardState>> listk = [];
+  List<Color> answerColor = [];
 
   @override
   void initState() {
