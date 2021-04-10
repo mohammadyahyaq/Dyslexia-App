@@ -39,7 +39,10 @@ class MenuItem extends StatelessWidget {
     return GestureDetector(
       onTap: (isUnLocked == 1)
           ? () {
+        int before = DateTime.now().millisecondsSinceEpoch;
         Navigator.pushNamed(context, pageName);
+        int after = DateTime.now().millisecondsSinceEpoch;
+        print(after - before);
       }
           : () {
         //do nothing

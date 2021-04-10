@@ -82,7 +82,7 @@ class _RegisterState extends State<Register> {
                   // check the email & password
                   onPressed: () async{
                     int before = DateTime.now().millisecondsSinceEpoch;
-                    print(before);
+                    //print(before);
                     if(_formKey.currentState.validate()){
                       setState(() => loading = true);
                       dynamic result = await _auth.registerWithEmailAndPassword(email, password);
@@ -93,8 +93,8 @@ class _RegisterState extends State<Register> {
                         });
                       }
                       int after = DateTime.now().millisecondsSinceEpoch;
-                      print('###############');
-                      print(after);
+                      //print('###############');
+                      //print(after);
                       print(after - before);
 
 

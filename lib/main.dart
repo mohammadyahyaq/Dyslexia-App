@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: AppStreamProvider.id,
       routes: {
-        AppStreamProvider.id: (context) => AppStreamProvider(), // just to make the app work
+        AppStreamProvider.id: (context) => AppStreamProvider(),
         MainScreen.id: (context) => MainScreen(),
         RememberTheLetterScreen.id: (context) => RememberTheLetterScreen(),
         LastLetterScreen.id: (context) => LastLetterScreen(),

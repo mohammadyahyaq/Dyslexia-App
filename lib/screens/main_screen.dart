@@ -1,12 +1,17 @@
 import 'package:dyslexia_app/screens/categorize_words.dart';
+import 'package:dyslexia_app/screens/last_letter_screen.dart';
 import 'package:dyslexia_app/screens/mcq_screen.dart';
+import 'package:dyslexia_app/screens/remember_the_letter_screen.dart';
 import 'package:dyslexia_app/screens_components/main_screen_components.dart';
+import 'package:dyslexia_app/services/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
 
   static final String id = '/kid';
+
+  final AuthService _auth = AuthService();
 
   // this variable represents the unlocked levels for the kid
   // note: 1 represents unlocked, and 0 represents locked
@@ -28,6 +33,20 @@ class MainScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                AppBar(
+                  actions: <Widget>[
+                    FlatButton.icon(
+                      icon: Icon(Icons.person),
+                      label: Text('تسجيل الخروج'),
+                      onPressed: () async {
+                        int before = DateTime.now().millisecondsSinceEpoch;
+                        await _auth.signOut();
+                        int after = DateTime.now().millisecondsSinceEpoch;
+                        print(after - before);
+                      },
+                    )
+                  ],
+                ),
                 Text(
                   'محمد علي',
                   style: TextStyle(
@@ -70,14 +89,14 @@ class MainScreen extends StatelessWidget {
                         itemName: 'ذاكرة الحروف',
                         itemColor: Color(0x33EC4646),
                         isUnLocked: _levels[0][0],
-                        pageName: '/rememberTheLetter',
+                        pageName: RememberTheLetterScreen.id,
                       ),
                       MenuItem(
                         imagePath: 'assets/images/last letter.png',
                         itemName: 'لعبة الحرف الأخير',
                         itemColor: Color(0x33EC4646),
                         isUnLocked: _levels[0][1],
-                        pageName: '/lastLetter',
+                        pageName: LastLetterScreen.id,
                       ),
                       MenuItem(
                         imagePath: 'assets/images/describe the picture.png',

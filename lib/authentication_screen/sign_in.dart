@@ -84,7 +84,7 @@ class _SignInState extends State<SignIn> {
                   // check the email & password
                   onPressed: () async{
                     int before = DateTime.now().millisecondsSinceEpoch;
-                    print(before);
+                    //print(before);
                     if(_formKey.currentState.validate()){
                       setState(() => loading = true);
                       dynamic result = await _auth.signInWithEmailAndPassword(email, password);
@@ -97,8 +97,8 @@ class _SignInState extends State<SignIn> {
                     }
 
                     int after = DateTime.now().millisecondsSinceEpoch;
-                    print('###############');
-                    print(after);
+                    //print('###############');
+                    //print(after);
                     print(after - before);
 
                   }

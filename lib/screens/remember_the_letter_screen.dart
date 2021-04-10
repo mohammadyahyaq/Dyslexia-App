@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
 
@@ -18,13 +17,13 @@ class _RememberTheLetterScreenState extends State<RememberTheLetterScreen> {
 
   @override
   void initState() {
-    listk[0] = GlobalKey<FlipCardState>();
-    listk[1] = GlobalKey<FlipCardState>();
-    listk[2] = GlobalKey<FlipCardState>();
-    listk[3] = GlobalKey<FlipCardState>();
+    listk.add(GlobalKey<FlipCardState>());
+    listk.add(GlobalKey<FlipCardState>());
+    listk.add(GlobalKey<FlipCardState>());
+    listk.add(GlobalKey<FlipCardState>());
 
-    for (int i = 0; i < answerColor.length; i++) {
-      answerColor[i] = Colors.black26;
+    for (int i = 0; i < listk.length; i++) {
+      answerColor.add(Colors.black26);
     }
     startTimer();
     super.initState();
